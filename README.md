@@ -1,5 +1,5 @@
 # FlowerFlower
-This Fiore Online Flowershop Project
+This is Fiore Online Flowershop Project
 
 ## Programming & Tool used
 * php with Laravel Framework
