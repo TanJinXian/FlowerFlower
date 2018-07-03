@@ -4,3 +4,7 @@ This is Fiore Online Flowershop Project
 ## Programming & Tool used
 * php with Laravel Framework
 * Bitnami Server with MySQL Database
+
+## Pre-Require
+* Make sure have Git installed in local computer.
+* Make sure the [Composer](https://getcomposer.org/) have installed.
