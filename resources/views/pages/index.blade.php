@@ -1,66 +1,27 @@
 @extends('layouts.app')
 
 @section('content')
-<header>
-	<div class="overlay">
-<h1>Simply The Best</h1>
-<h3>Reasons for Choosing US</h3>
-<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab. Vero nostrum quis, odio veniam itaque ullam debitis qui magnam consequatur ab.</p>
-	<br>
-	<button>READ MORE</button>
-		</div>
-</header>
-    <h1>Hello</h1>
-    <p>This is the first page (index) of the website</p>
-    <p>Test</p>
+<nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">WebSiteName</a>
+          </div>
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Page 1-1</a></li>
+                <li><a href="#">Page 1-2</a></li>
+                <li><a href="#">Page 1-3</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Page 2</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+          </ul>
+        </div>
+      </nav>
 @endsection
 
-<style>
-    *{padding: 0; margin: 0; box-sizing: border-box;}
-body{height: 900px;}
-header {
-	background: url('http://www.autodatz.com/wp-content/uploads/2017/05/Old-Car-Wallpapers-Hd-36-with-Old-Car-Wallpapers-Hd.jpg');
-	text-align: center;
-	width: 100%;
-	height: auto;
-	background-size: cover;
-	background-attachment: fixed;
-	position: relative;
-	overflow: hidden;
-	border-radius: 0 0 85% 85% / 30%;
-}
-header .overlay{
-	width: 100%;
-	height: 100%;
-	padding: 50px;
-	color: #FFF;
-	text-shadow: 1px 1px 1px #333;
-  background-image: linear-gradient( 135deg, #9f05ff69 10%, #fd5e086b 100%);
-	
-}
-
-h1 {
-	font-family: 'Dancing Script', cursive;
-	font-size: 80px;
-	margin-bottom: 30px;
-}
-
-h3, p {
-	font-family: 'Open Sans', sans-serif;
-	margin-bottom: 30px;
-}
-
-button {
-	border: none;
-	outline: none;
-	padding: 10px 20px;
-	border-radius: 50px;
-	color: #333;
-	background: #fff;
-	margin-bottom: 50px;
-	box-shadow: 0 3px 20px 0 #0000003b;
-}
-button:hover{
-	cursor: pointer;
-}
-</style>
