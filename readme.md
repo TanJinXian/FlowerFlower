@@ -13,3 +13,6 @@ This is Fiore Online Flowershop Project
 * Install git to clone the project, refer to the [cheat Sheet](https://www.git-tower.com/blog/git-cheat-sheet/)
 * Alternately, using the GitHub Desktop to clone. Download at [here](https://desktop.github.com/)
 * Open the Laravel project with any text editor or IDE
+
+## After clone this project to you bitnami htdocs repo
+* follow this [link](https://stackoverflow.com/questions/38602321/cloning-laravel-project-from-github) to complete the project installation.
