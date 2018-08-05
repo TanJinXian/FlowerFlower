@@ -15,8 +15,18 @@ Route::get('/', function () {
     return view('pages.index');
 });
 
-Route::get('staffRegister','AuthController@showStaffRegisterForm')->name('authenticationView.staffRegister');
-Route::post('staffRegister','AuthController@staffRegister');
 
-Route::get('staffLogin','AuthController@showStaffLoginForm')->name('authenticationView.staffLogin');
-Route::post('staffLogin','AuthController@staffLogin');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::prefix('staff')->group(function(){
+    Route::get('staffRegister','Auth\staffRegisterController@showStaffRegisterForm')->name('authenticationView.staffRegister');
+    Route::post('staffRegister','Auth\staffRegisterController@staffRegister')->name('staff.register.submit');
+
+    Route::get('staffLogin','Auth\staffLoginController@showLoginForm')->name('authenticationView.staffLogin');
+    Route::post('staffLogin','Auth\staffLoginController@login')->name('staff.login.submit');
+
+    Route::get('/', 'StaffController@index')->name('staff.dashboard');
+});
+

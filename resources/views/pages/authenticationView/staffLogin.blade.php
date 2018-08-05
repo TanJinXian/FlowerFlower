@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-lg-offset-3 col-lg-6">
                 
-            <form class="form-horizontal" action="{{route('authenticationView.staffLogin')}}" method="POST">
+            <form class="form-horizontal" action="{{route('staff.login.submit')}}" method="POST">
                 {{csrf_field()}}
                     <fieldset>
                         <legend>Staff Login</legend>

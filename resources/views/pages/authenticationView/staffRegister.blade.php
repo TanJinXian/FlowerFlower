@@ -7,7 +7,7 @@
             @if (session('Status'))
                 <p>{{session('Status')}}</p>
             @endif
-        <form class="form-horizontal" action="{{route('authenticationView.staffRegister')}}" method="POST">
+        <form class="form-horizontal" action="{{route('staff.register.submit')}}" method="POST">
             {{csrf_field()}}
                 <fieldset>
                     <legend>Staff Register</legend>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class AddPasswordToStaff extends Migration
+class AddRememberTokenToStaff extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,8 @@ class AddPasswordToStaff extends Migration
      */
     public function up()
     {
-        Schema::table('staff', function (Blueprint $table) {
-            $table->string('password')->after('id');
-            //$table->rememberToken()->after('status');
+        Schema::table('staff', function($table) {
+            $table->rememberToken()->after('status');
         });
     }
 
@@ -26,8 +25,8 @@ class AddPasswordToStaff extends Migration
      */
     public function down()
     {
-        Schema::table('staff', function (Blueprint $table) {
-            $table->dropColumn('password');
+        Schema::table('staff', function($table) {
+            $table->rememberToken();
         });
     }
 }
