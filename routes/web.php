@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('pages.index');
 });
+
+Route::get('staffRegister','AuthController@showStaffRegisterForm')->name('authenticationView.staffRegister');
+Route::post('staffRegister','AuthController@staffRegister');
+
+Route::get('staffLogin','AuthController@showStaffLoginForm')->name('authenticationView.staffLogin');
+Route::post('staffLogin','AuthController@staffLogin');
