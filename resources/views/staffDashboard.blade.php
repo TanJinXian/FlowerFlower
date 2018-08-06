@@ -5,8 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Staff Dashboard</div>
-
+                    @if(Auth::user()->position == 'Manager')
+                        <div class="card-header">Manager Dashboard</div>
+                    @elseif(Auth::user()->position == 'Delivery Man')
+                        <div class="card-header">Delivery Man Dashboard</div>
+                    @else
+                        <div class="card-header">Staff Dashboard</div>
+                    @endif
+                    
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -14,7 +20,10 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    Welcome {{ Auth::user()->name }}!
+
+                    @component('components.who')
+                    @endcomponent
                 </div>
             </div>
         </div>

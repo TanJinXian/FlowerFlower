@@ -10,7 +10,7 @@ class staffLoginController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('guest:staff');
+        $this->middleware('guest:staff', ['except' => ['logout']]);
     }
 
     public function showLoginForm()
@@ -29,10 +29,18 @@ class staffLoginController extends Controller
         //Attempt to log the user in
         if (Auth::guard('staff')->attempt(['email'=>$request->email, 'password' => $request->password], $request->remember)){
             //if successful, then redirect to thier intended location
-            return redirect()->intended(route('staff.dashboard'));
+            return redirect()->intended(route('staff.dashboard'))->with('status','Login Successful');
         }
         
         //if unsucessful, then redirect back to the login form with the form data
         return redirect()->back()->withInput($request->only('email','remember'));
     }
+
+    public function logout()
+    {
+        Auth::guard('staff')->logout();
+
+        return redirect('/');
+    }
+
 }

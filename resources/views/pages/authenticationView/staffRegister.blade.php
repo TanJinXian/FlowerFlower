@@ -60,10 +60,19 @@
                             <input type="text" class="form-control" id="phone" name="phoneNum" placeholder="Enter Phone Number">
                     </div>
 
-                    
+                    <!--
                     <div class="form-group">
                             <label for="">Position</label>
                             <input type="text" class="form-control" id="name" name="position" placeholder="Enter Position">
+                    </div>
+                -->    
+                    <div class="form-group">
+                            <label for="">Position</label>
+                            <select class="form-control" id="exampleSelect1" name='position'>
+                                <option>Manager</option>
+                                <option>Sale Preson</option>
+                                <option>Delivery Man</option>
+                            </select>
                     </div>
 
                     <div class="form-group">

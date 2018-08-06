@@ -28,5 +28,7 @@ Route::prefix('staff')->group(function(){
     Route::post('staffLogin','Auth\staffLoginController@login')->name('staff.login.submit');
 
     Route::get('/', 'StaffController@index')->name('staff.dashboard');
+
+    Route::get('/logout', 'Auth\staffLoginController@logout')->name('staff.logout');
 });
 
