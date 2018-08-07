@@ -43,10 +43,10 @@
                         @guest
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('authenticationView.staffLogin') }}">Comsumer Login</a>
+                                <a class="nav-link" href="{{ route('authenticationView.consumerLogin') }}">Comsumer Login</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('authenticationView.staffRegister') }}">Comsumer Register</a>
+                                <a class="nav-link" href="{{ route('authenticationView.custRegister') }}">Comsumer Register</a>
                             </li>
 
                             <li class="nav-item">

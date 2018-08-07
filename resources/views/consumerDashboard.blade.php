@@ -1,0 +1,30 @@
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                @if(Auth::user()->companyName == NULL)
+                        <div class="card-header">Customer Dashboard</div>
+                    @else
+                        <div class="card-header">Coporate Customer Dashboard</div>
+                    @endif
+                    
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    Welcome {{ Auth::user()->name }}!
+
+                    @component('components.who')
+                    @endcomponent
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection

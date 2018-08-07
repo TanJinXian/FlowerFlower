@@ -30,5 +30,22 @@ Route::prefix('staff')->group(function(){
     Route::get('/', 'StaffController@index')->name('staff.dashboard');
 
     Route::get('/logout', 'Auth\staffLoginController@logout')->name('staff.logout');
+
+    Route::prefix('/report')->group(function(){
+        Route::get('/dailyOrderReport','StaffController@showDailySaleReport')->name('manager.dailyReport');
+        Route::get('/dailyPickupReport','StaffController@showDailyPickupReport')->name('manager.dailyPickupReport');
+        Route::get('/dailyDeliveryReport','StaffController@showDailyDeliveryReport')->name('manager.dailyDeliveryReport');
+    });
 });
+
+Route::prefix('customer')->group(function(){
+    Route::get('custRegister','Auth\custRegisterController@showCustRegisterForm')->name('authenticationView.custRegister');
+    Route::post('custRegister','Auth\custRegisterController@custRegister')->name('customer.register.submit');
+
+    Route::get('custLogin','Auth\consumerLoginController@showLoginForm')->name('authenticationView.consumerLogin');
+    Route::post('custLogin','Auth\consumerLoginController@login')->name('consumer.login.submit');
+
+
+    Route::get('/','ConsumerController@index')->name('consumer.dashboard');
+}); 
 

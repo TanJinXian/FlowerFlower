@@ -14,8 +14,20 @@ class Consumer extends Authenticatable
      *
      * @var array
      */
+    protected $guard = 'consumer';
+    protected $table = 'consumers';
     protected $fillable = [
-        'name', 'email', 'password',
+        'custName', 
+        'custIC',
+        'custGender',
+        'custDob',
+        'address',
+        'email',
+        'ContactNo',
+        'companyName',
+        'creditLimit',
+        'password',
+        'status'
     ];
 
     /**

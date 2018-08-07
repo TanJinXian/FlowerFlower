@@ -61,6 +61,9 @@ class Handler extends ExceptionHandler
                         break;
             
                     //add customer
+                    case 'consumer':
+                        $login = 'authenticationView.consumerLogin';
+                        break;
 
                     default:
                         $login = 'login'; //default laravel login function

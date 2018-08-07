@@ -27,6 +27,11 @@ class RedirectIfAuthenticated
                 break;
             
             //add customer
+            case 'consumer':
+                if (Auth::guard($guard)->check()){
+                    return redirect()->route('authenticationView.consumerLogin');
+                }
+                break;
 
             default:
                if (Auth::guard($guard)->check()) {

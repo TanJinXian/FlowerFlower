@@ -25,4 +25,19 @@ class StaffController extends Controller
     {
         return view('staffDashboard');
     }
+
+    public function showDailySaleReport()
+    {
+        return view('pages.report.dailyOrderReport');
+    }
+
+    public function showDailyPickupReport()
+    {
+        return view('pages.report.dailyPickupReport');
+    }
+
+    public function showDailyDeliveryReport()
+    {
+        return view('pages.report.dailyDeliveryReport');
+    }
 }
