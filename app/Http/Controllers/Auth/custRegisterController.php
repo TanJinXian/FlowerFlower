@@ -24,7 +24,7 @@ class custRegisterController extends Controller{
     public function custRegister(Request $requset){
         $requset['password'] = bcrypt($requset->password); // encrypt the user password
         Consumer::create($requset->all());
-        return redirect('staff/staffLogin');
+        return redirect('customer/custLogin');
         
 }
 }

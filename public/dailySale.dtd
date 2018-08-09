@@ -1,0 +1,13 @@
+<!--/*
+    Subject: BAIT3173 Integrative Programming
+    Author: Tan Jin Xian RSD3 G7 17WMR09511
+*/-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT orderReport (order)*>
+<!ELEMENT order (orderid , custName, orderDate, totalPayment)>
+<!ELEMENT orderid (#PCDATA)>
+<!ELEMENT custName (#PCDATA)>
+<!ELEMENT orderDate (#PCDATA)>
+<!ELEMENT totalPayment (#PCDATA)>
+

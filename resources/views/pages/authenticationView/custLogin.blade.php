@@ -1,3 +1,8 @@
+<!--/*
+    Subject: BAIT3173 Integrative Programming
+    Author: Tan Jin Xian RSD3 G7 17WMR09511
+*/-->
+
 @extends('layouts.app')
 
 @section('content')
@@ -22,6 +27,10 @@
                         </div>
                         
                         <button type="submit" class="btn btn-primary btn-block">Login</button>
+
+                        <a class="btn btn-link" href="{{ route('consumer.password.request') }}">
+                                {{ __('Forgot Your Password?') }}
+                        </a>
                     </fieldset>
                 </form>
             </div>

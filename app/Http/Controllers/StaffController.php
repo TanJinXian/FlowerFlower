@@ -1,8 +1,12 @@
 <?php
-
+/*
+    Subject: BAIT3173 Integrative Programming
+    Author: Tan Jin Xian RSD3 G7 17WMR09511
+*/
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class StaffController extends Controller
 {
@@ -26,11 +30,21 @@ class StaffController extends Controller
         return view('staffDashboard');
     }
 
+    /*
     public function showDailySaleReport()
     {
-        return view('pages.report.dailyOrderReport');
-    }
+        $result = DB::table('flower_orders')
+                        ->join('consumers','consumers.id','=','flower_orders.customerID')
+                        ->whereDate('flower_orders.created_at', DB::raw('CURDATE()'))
+                        ->get(array(
+                            'flower_orders.id',
+                            'custName',
+                            'type'
+                        ));
 
+        return view('pages.report.dailyOrderReport',['result' => $result]);
+    }
+    */
     public function showDailyPickupReport()
     {
         return view('pages.report.dailyPickupReport');

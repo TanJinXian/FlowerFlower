@@ -1,3 +1,8 @@
+<!--/*
+    Subject: BAIT3173 Integrative Programming
+    Author: Tan Jin Xian RSD3 G7 17WMR09511
+*/-->
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -52,9 +57,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('authenticationView.staffLogin') }}">Staff Login</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('authenticationView.staffRegister') }}">Staff Register</a>
-                            </li>
+                            
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
