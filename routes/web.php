@@ -18,6 +18,7 @@ Route::get('/', function () {
 });
 */
 
+
 Route::get('/','Controller@userShow')->name('preprocess');
 Route::get('/viewCat/{id}', 'Controller@showViewForConsumer')->name('view.cat');
 
@@ -125,3 +126,55 @@ Route::view('testXML','testXML');
 
 Route::resource('product','productControl');
 Route::resource('catalog','catalogControl');
+
+
+//Tan Yi Ying
+Route::get('orderMain', function() {
+    if(Session::has('orderInfo'))
+        Session::forget('orderInfo');
+    if(Session::has('orderDetailList'))
+        Session::forget('orderDetailList');
+    if(Session::has('isEditable'))
+        Session::forget('isEditable');
+    if(Session::has('grandTotal'))
+        Session::forget('grandTotal');
+    if(Session::has('promoArray'))  
+        Session::forget('promoArray');      
+    
+    return view('pages.order');
+})->name('orderMain');
+
+Route::post('orderIndex', 'OrderController@orderIndex');
+Route::post('flowerOrder', 'OrderController@storeOrderDetails');
+Route::post('deleteOrderItem/{productID}', 'OrderController@deleteOrderItem');
+Route::post('updateOrderItem/{productID}', 'OrderController@updateOrderItem');
+Route::post('storeOrderInfo', 'OrderController@storeOrderInfo');
+Route::post('storeOrder', 'OrderController@storeOrder');
+Route::post('displaySaleOrder', 'OrderController@displaySaleOrder');
+Route::get('orderXML', 'OrderController@convertToXML');
+
+Route::get('orderDetails', function () {
+    return view('pages.orderDetails');
+});
+
+Route::get('proceedOrderInfo', function () {
+    return view('pages.orderInfo');
+});
+
+Route::get('order', function() {
+    return view('pages.order');
+});
+
+Route::get('orderConfirmation', function() {
+    return view('pages.orderConfirmation');
+});
+
+Route::get('editOrderConfirmation', function() {
+    $orderInfo = Session::get('orderInfo');
+    Session::put('isEditable', true);
+    return view('pages.orderConfirmation', compact('orderInfo'));
+});
+
+Route::get('saleOrder', function() {
+    return view('pages.orderSale');
+});

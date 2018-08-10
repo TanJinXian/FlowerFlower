@@ -9,6 +9,7 @@
      ?>
         <td>{{$month}}</td>
         <td><a href="{{route('view.cat', $catalogs->Month)}}" class="btn btn-warning">View</a></td>
+        
     </tr>
 @endforeach
 </table>

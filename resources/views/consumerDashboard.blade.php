@@ -25,7 +25,7 @@
                     @endif
 
                     Welcome {{ Auth::user()->name }}!
-
+                    <td><a href="{{route('orderMain')}}" class="btn btn-warning">Order</a></td>
                     @component('components.who')
                     @endcomponent
                 </div>
