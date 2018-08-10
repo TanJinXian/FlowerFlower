@@ -5,9 +5,9 @@
 
 @if(Auth::user()->position == 'Manager')
 
-    <a href="{{route('manager.dailyReport')}}"><button type="button">Daily Order Received Report</button></a>
-    <a href="{{route('manager.dailyPickupReport')}}"><button type="button">Daily Pickup Report</button></a>
-    <a href="{{route('manager.dailyDeliveryReport')}}"><button type="button">Daily Delivery Report</button></a>
+    <a href="{{route('manager.dailyReport',"saleReport")}}"><button type="button">Daily Order Received Report</button></a>
+    <a href="{{route('manager.dailyPickupReport',"pickupReport")}}"><button type="button">Daily Pickup Report</button></a>
+    <a href="{{route('manager.dailyDeliveryReport',"deliveryReport")}}"><button type="button">Daily Delivery Report</button></a>
     <a href="{{route('authenticationView.staffRegister')}}"><button type="button">Register New Staff</button></a>
 @endif
 

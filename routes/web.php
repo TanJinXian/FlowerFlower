@@ -30,9 +30,9 @@ Route::prefix('staff')->group(function(){
     Route::get('/logout', 'Auth\staffLoginController@logout')->name('staff.logout');
 
     Route::prefix('/report')->group(function(){
-        Route::get('/dailyOrderReport','reportController@showDailySaleReport')->name('manager.dailyReport');
-        Route::get('/dailyPickupReport','reportController@showDailyPickupReport')->name('manager.dailyPickupReport');
-        Route::get('/dailyDeliveryReport','reportController@showDailyDeliveryReport')->name('manager.dailyDeliveryReport');
+        Route::get('/dailyOrderReport/{r}','reportController@getClientReport')->name('manager.dailyReport');
+        Route::get('/dailyPickupReport/{r}','reportController@getClientReport')->name('manager.dailyPickupReport');
+        Route::get('/dailyDeliveryReport/{r}','reportController@getClientReport')->name('manager.dailyDeliveryReport');
     });
 
     Route::prefix('/payment')->group(function(){

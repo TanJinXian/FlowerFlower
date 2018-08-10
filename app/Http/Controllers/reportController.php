@@ -11,6 +11,7 @@ use App\flowerOrder;
 use App\Consumer;
 use DB;
 use XMLWriter;
+use App\lib\ReportFactory;
 
 class reportController extends Controller
 {
@@ -111,7 +112,18 @@ class reportController extends Controller
         //
     }
 
-    public function showDailySaleReport()
+    public function getClientReport($r){
+        //$reportFactory = (new ReportFactory())->instance();
+
+        $reportInterface = (new ReportFactory())->getReport($r);
+        
+            return $reportInterface->getXMLReport();
+        
+    }
+
+    //Below code work with Factory method already
+    /*
+    public function showDailySaleReport($r)
     {
         $results = DB::table('flower_orders')
         ->join('consumers','consumers.id','=','flower_orders.customerID')
@@ -156,7 +168,7 @@ class reportController extends Controller
         return view('pages.report.dailyOrderReport');
     }
 
-    public function showDailyPickupReport()
+    public function showDailyPickupReport($r)
     {
         $results = DB::table('flower_orders')
         ->join('consumers','consumers.id','=','flower_orders.customerID')
@@ -201,7 +213,7 @@ class reportController extends Controller
         return view('pages.report.dailyPickupReport');
     }
 
-    public function showDailyDeliveryReport()
+    public function showDailyDeliveryReport($r)
     {
         $results = DB::table('flower_orders')
         ->join('consumers','consumers.id','=','flower_orders.customerID')
@@ -245,4 +257,5 @@ class reportController extends Controller
         
         return view('pages.report.dailyDeliveryReport');
     }
+    */
 }

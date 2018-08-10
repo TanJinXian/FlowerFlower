@@ -1,17 +1,2 @@
 <?xml version="1.0"?>
-<!DOCTYPE orderReport SYSTEM 'dailySale.dtd'>
-<?xml-stylesheet type="text/xsl" href="dailySale.xsl"?>
-<orderReport>
-    <order>
-        <orderid>1</orderid>
-        <custName>John</custName>
-        <orderDate>2018-08-10 13:17:17</orderDate>
-        <totalPayment>40</totalPayment>
-    </order>
-    <order>
-        <orderid>4</orderid>
-        <custName>John</custName>
-        <orderDate>2018-08-10 13:17:17</orderDate>
-        <totalPayment>60</totalPayment>
-    </order>
-</orderReport>
+<orderReport><order><orderid>1</orderid><custName>John</custName><orderDate>2018-08-10 13:17:17</orderDate><totalPayment>40</totalPayment></order><order><orderid>4</orderid><custName>John</custName><orderDate>2018-08-10 13:17:17</orderDate><totalPayment>60</totalPayment></order></orderReport>
