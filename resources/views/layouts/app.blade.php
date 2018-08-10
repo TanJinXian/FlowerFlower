@@ -74,6 +74,15 @@
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
+
+                                    <a class="dropdown-item" href="{{ route('consumer.profile') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('profile-management-form').submit();">
+                                        {{ __('Profile Management') }}
+                                    </a>
+                                    <form id="profile-management-form" action="{{ route('consumer.profile') }}" method="GET" style="display: none;">
+                                        @csrf
+                                    </form>
                                 </div>
                             </li>
                         @endguest

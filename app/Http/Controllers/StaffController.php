@@ -4,6 +4,8 @@
     Author: Tan Jin Xian RSD3 G7 17WMR09511
 */
 namespace App\Http\Controllers;
+use App\Consumer;
+use App\lib\proxyCreditLimit;
 
 use Illuminate\Http\Request;
 use DB;
@@ -54,4 +56,17 @@ class StaffController extends Controller
     {
         return view('pages.report.dailyDeliveryReport');
     }
+
+    public function showConsumer(){
+        $cooperateConsumer = DB::table('consumers')
+               ->where('status', '=', 'Cooperation-Consumer')
+               ->get(array(
+           'id'
+       ));
+        return view('pages.authenticationView.chooseConsumer', ['cooperateConsumer' => $cooperateConsumer]);
+   }
+   
+   public function updateCreditLimit(Request $request){
+       return $proxyCreditLimit = (new proxyCreditLimit)->editCreditLimit($request);
+   }
 }

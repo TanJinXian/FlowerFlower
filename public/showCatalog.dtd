@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/showCatalog.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE catalog SYSTEM "showCatalog.dtd">
+
+    <catalog>
+    ...
+    </catalog>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT catalog (product)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT product (productID|name|description|price|status|promoSeason)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT productID EMPTY>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT name (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT description (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT price (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT status (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT promoSeason EMPTY>

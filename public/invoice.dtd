@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<!--
+    TODO define vocabulary identification
+    PUBLIC ID: -//vendor//vocabulary//EN
+    SYSTEM ID: http://server/path/invoice.dtd
+
+-->
+
+<!--
+    An example how to use this DTD from your XML document:
+
+    <?xml version="1.0"?>
+
+    <!DOCTYPE Invoice SYSTEM "invoice.dtd">
+
+    <Invoice>
+    ...
+    </Invoice>
+-->
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT Invoice (invoices)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT invoices (invoiceID|invoiceDate|orderID|orderDate|amount|custName)*>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT invoiceID (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT invoiceDate (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT orderID (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT orderDate (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT amount (#PCDATA)>
+
+<!--- Put your DTDDoc comment here. -->
+<!ELEMENT custName (#PCDATA)>

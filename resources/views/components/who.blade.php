@@ -9,6 +9,9 @@
     <a href="{{route('manager.dailyPickupReport',"pickupReport")}}"><button type="button">Daily Pickup Report</button></a>
     <a href="{{route('manager.dailyDeliveryReport',"deliveryReport")}}"><button type="button">Daily Delivery Report</button></a>
     <a href="{{route('authenticationView.staffRegister')}}"><button type="button">Register New Staff</button></a>
+    <a href="{{route('showPartA')}}"><button type="button">Product and Catalog Management</button></a>
+    <a href="{{route('manager.CooperateConsumer')}}"><button type="button">Cooperate Consumer Invoice</button></a>
+    <a href="{{route('manager.chooseConsumer')}}"><button type="button">Consumer Credit Limit</button></a>
 @endif
 
 @if(Auth::user()->position == 'Sale Preson')

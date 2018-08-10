@@ -139,7 +139,7 @@ return [
         'consumers' => [
             'provider' => 'consumers',
             'table' => 'password_resets',
-            'expire' => 60,
+            'expire' => 10,
         ],
     ],
 

@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="catalog.xsl"?>
+<catalog>
+  <product>
+    <type>Flower</type>
+    <id>2</id>
+    <name>Lotus</name>
+    <desc>a red color flower</desc>
+    <price>10</price>
+    <status>Available</status>
+    <promoSeason>2018-08-08 13:17:17</promoSeason>
+  </product>
+  <product>
+    <type>bonquets</type>
+    <id>3</id>
+    <name>Set of Rose</name>
+    <desc>a red color flower</desc>
+    <price>10</price>
+    <status>Available</status>
+    <promoSeason>2018-01-08 13:17:17</promoSeason>
+  </product>
+  <product>
+    <type> bonquets </type>
+    <id>5</id>
+    <name>Set of Lotus</name>
+    <desc>a red color flower</desc>
+    <price>10</price>
+    <status>Available</status>
+    <promoSeason>2018-04-08 13:17:17</promoSeason>
+  </product>
+  <product>
+    <type>floralArrangements</type>
+    <id>6</id>
+    <name>Sun Rose</name>
+    <desc>combination of sunflower and rose</desc>
+    <price>10</price>
+    <status>Available</status>
+    <promoSeason>2018-05-08 13:17:17</promoSeason>
+  </product>
+  <product>
+    <type>Flower</type>
+    <id>7</id>
+    <name>XDD</name>
+    <desc>just a joke</desc>
+    <price>100</price>
+    <status>Available</status>
+    <promoSeason>2000-03-10 00:00:00</promoSeason>
+  </product>
+  <product>
+    <type>bonquets</type>
+    <id>8</id>
+    <name>XDD</name>
+    <desc>just a joke</desc>
+    <price>20</price>
+    <status>Available</status>
+    <promoSeason>2000-01-10 00:00:00</promoSeason>
+  </product>
+  <product>
+    <type>floralArrangements</type>
+    <id>9</id>
+    <name>gg.com</name>
+    <desc>testing</desc>
+    <price>10</price>
+    <status>Available</status>
+    <promoSeason>2000-05-10 00:00:00</promoSeason>
+  </product>
+  <product>
+    <type>Flower</type>
+    <id>10</id>
+    <name>last Test</name>
+    <desc>just have a try</desc>
+    <price>10</price>
+    <status>Available</status>
+    <promoSeason>2000-10-10 00:00:00</promoSeason>
+  </product>
+</catalog>

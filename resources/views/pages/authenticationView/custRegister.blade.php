@@ -14,7 +14,10 @@
                     
                     <div class="form-group">
                             <label for="">Name</label>
-                            <input type="text" class="form-control" id="custName" name="custName" placeholder="Enter Full Name">
+                            <input type="text" class="form-control" id="custName" name="custName" placeholder="Enter Full Name" value="{{old('firstName')}}">
+                            @if($errors->has('custName'))
+                            <span style="color:red">{{$errors->first('custName')}}</span>
+                            @endif
                     </div>
 
                     <div class="form-group">
@@ -68,11 +71,17 @@
                     <div class="form-group">
                         <label for="exampleInputPassword1">Password</label>
                         <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="Password">
+                        @if($errors->has('password'))
+                        <span style="color:red"><p>Your password must be more than 8 characters long, should contain at-least 1 Uppercase, 1 Lowercase, 1 Numeric and 1 special character.</p></span>
+                         @endif
                     </div>
 
                     <div class="form-group">
                             <label for="exampleInputPassword1">Re-enter Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1"  placeholder="Password">
+                            <input type="password" class="form-control" id="exampleInputPassword1"  placeholder="Password" name='confirmPassword'>
+                            @if($errors->has('confirmPassword'))
+                        <span style="color:red"><p>Password Not Match</p></span>
+                         @endif
                             <!--name="password_confirmation"-->
                         </div>
 

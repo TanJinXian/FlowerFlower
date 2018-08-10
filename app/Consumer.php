@@ -4,7 +4,7 @@
     Author: Tan Jin Xian RSD3 G7 17WMR09511
 */
 namespace App;
-
+use Illuminate\Http\Request;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\ConsumerResetPasswordNotification;
@@ -46,5 +46,12 @@ class Consumer extends Authenticatable
     public function sendPasswordResetNotification($token)
     {
         $this->notify(new ConsumerResetPasswordNotification($token));
+    }
+    public function editCreditLimit(Request $request){
+        $id = $request->get('selectedConsumer');
+        $creditLimit = Consumer::find($id);
+        $creditLimit->creditLimit = $request->get('creditLimit');
+        $creditLimit->save();
+        return view('staffDashboard');
     }
 }

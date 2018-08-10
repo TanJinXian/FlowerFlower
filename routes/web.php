@@ -12,10 +12,14 @@
 |
 */
 
+/*
 Route::get('/', function () {
     return view('pages.index');
 });
+*/
 
+Route::get('/','Controller@userShow')->name('preprocess');
+Route::get('/viewCat/{id}', 'Controller@showViewForConsumer')->name('view.cat');
 
 Auth::routes();
 
@@ -33,6 +37,21 @@ Route::prefix('staff')->group(function(){
         Route::get('/dailyOrderReport/{r}','reportController@getClientReport')->name('manager.dailyReport');
         Route::get('/dailyPickupReport/{r}','reportController@getClientReport')->name('manager.dailyPickupReport');
         Route::get('/dailyDeliveryReport/{r}','reportController@getClientReport')->name('manager.dailyDeliveryReport');
+    });
+
+    Route::prefix('/creditLimit')->group(function(){
+        Route::get('/chooseConsumer','staffController@showConsumer')->name('manager.chooseConsumer');
+        Route::post('/chooseConsumer','staffController@updateCreditLimit')->name('manager.updateCredit');
+        
+    });
+    
+    
+    Route::prefix('/invoice')->group(function(){
+        Route::get('/selectConsumer','InvoiceController@showConsumer')->name('manager.CooperateConsumer');
+        Route::post('/selectConsumer','InvoiceController@showInvoiceContent')->name('manager.invoiceDetail');
+        Route::post('/InvoiceDetail','InvoiceController@storeInvoice')->name('manager.storeInvoice');
+        Route::get('/printInvoice','InvoiceController@showPrintInvoice')->name('manager.showInvoice');
+        Route::post('/Invoice','InvoiceController@DisplayInvoice')->name('manager.DisplayInvoice');
     });
 
     Route::prefix('/payment')->group(function(){
@@ -56,7 +75,8 @@ Route::prefix('customer')->group(function(){
     Route::get('custLogin','Auth\consumerLoginController@showLoginForm')->name('authenticationView.consumerLogin');
     Route::post('custLogin','Auth\consumerLoginController@login')->name('consumer.login.submit');
 
-
+    Route::get('customerProfile','consumerProfileController@index')->name('consumer.profile');
+    Route::post('customerProfile/{id}','consumerProfileController@update')->name('update.profile');
     Route::get('/','ConsumerController@index')->name('consumer.dashboard');
  
     //password resert for consumer
@@ -68,3 +88,40 @@ Route::prefix('customer')->group(function(){
 }); 
 
 //Route::get('/','reportController@index')->name('staff.report');
+
+//product
+Route::get('createProduct','productControl@creating')->name("creatingProduct");//use to call createproduct
+Route::post('storeProduct','productControl@store')->name("CreateProduct");// use in createproduct
+Route::get('generateXML',"productControl@generateXMLproduct")->name("createXML");//use to create XML file
+Route::get('showAllProduct','productControl@index')->name("allProduct");//use for showing all product for delete or editing
+Route::post('updateProduct',"productControl@updating")->name("updating");
+Route::post('deletedItem',"productControl@destroyThem")->name("destroyingProduct");
+
+Route::post('product/showall','productControl@showall');
+Route::post('catalog/createMulti','catalogControl@createMulti');// in creating catalog
+Route::post('catalog/update','catalogControl@update')->name("editCatalog");
+
+Route::post('catalog/updateMonth','catalogControl@updateMonth')->name("updateMonth");//in editCatalog
+
+Route::get('ShowAllCatalog','catalogControl@index')->name("showAllCatalog");
+Route::get('showOnlyPromo/{id}','catalogControl@showPromo')->name("ShowPromotion");
+Route::get('showOnlyFlower/{id}','catalogControl@ShowFlower')->name("ShowFlower");
+Route::get('showOnlyBonquet/{id}','catalogControl@ShowBonquet')->name("ShowBonquet");
+Route::get('showOnlyFloral/{id}','catalogControl@ShowFloral')->name("ShowFloral");
+
+
+
+//go to starting page for partA
+Route::get('showLinkage','productControl@jumpBackPartA')->name("showPartA");
+//show linkage between part
+Route::get('partA', function () {
+    return view('Linking');
+  });
+
+Route::view('createCatalog','pages.CreateCatalog')->name("prepareCatalog");
+Route::view('generateCatalog','xml.catalog')->name("shownXML");
+
+Route::view('testXML','testXML');
+
+Route::resource('product','productControl');
+Route::resource('catalog','catalogControl');
